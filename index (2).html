@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courgette&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Great+Vibes&display=swap" rel="stylesheet">
+ <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+ <link href="https://fonts.googleapis.com/css2?family=Norican&display=swap" rel="stylesheet">
+
+  <!-- Your CSS -->
+  <link rel="stylesheet" href="api.css">
+
+  <style>
+    .heart {
+      position: absolute;
+      font-size: 24px;
+      color: black;
+      animation: float 2s linear forwards;
+      pointer-events: none;
+    }
+
+    @keyframes float {
+      0% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+      100% {
+        opacity: 0;
+        transform: translateY(-150px) scale(1.5);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="main">
+    <input type="checkbox" id="check">
+    <div class="wish"> 
+     <p> <b style="color: aliceblue;">Happy Birthday Api </b> &#129293;🎈!<br> Wishing you many happy returns of the day&#127804; <br>
+      I know you’re tired but I truly believe <br>something amazing is on its  way to you very soon,<br> InshaAllah. &hearts;You will always find me by your <br> side, just like the moon, it may be far, but <br> whenever you look for it in the darkness <br>(in tough times), you will always see it &#127800;.<br> Keep believing in yourself. You <br> deserve all the good things <br>ahead!🌟🎂 <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;From Nisha Shakoor🌻
+      </p>
+    </div>
+    <div class="btn_one">
+      <label for="check" id="cakeClick">
+        blow candles <i class="fa-solid fa-cake-candles"></i>
+      </label>
+    </div>
+    <div class="btn_two">
+      <label for="check">
+        <i class="fa-solid fa-xmark"></i>
+      </label>
+    </div>
+    <h1>Zainab&hearts;</h1>
+    <br>
+
+    <div id="h"> 
+      <div class="b">H</div>
+      <div class="b">A</div>
+      <div class="b">P</div>
+      <div class="b">P</div>
+      <div class="b">Y</div>
+      <br>
+      <div class="d">B</div>
+      <div class="d">I</div>
+      <div class="d">R</div>
+      <div class="d">T</div>
+      <div class="d">H</div>
+      <div class="d">D</div>
+      <div class="d">A</div>
+      <div class="d">Y</div>
+    </div>
+  </div>
+
+  <!-- Confetti Script (runs on page load) -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <script>
+    // 1. Popper/Confetti on page load
+    window.addEventListener('load', () => {
+      confetti({
+        particleCount: 200,
+        spread: 180,
+        origin: { y: 0.6 }
+      });
+    });
+
+    // 2. Hearts pop on cake icon click
+    document.getElementById("cakeClick").addEventListener("click", () => {
+      for (let i = 0; i < 50; i++) {
+        createHeart();
+      }
+    });
+
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.innerHTML = "&#x2665;"; // black heart
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.top = Math.random() * 100 + "vh";
+      document.body.appendChild(heart);
+      setTimeout(() => {
+        heart.remove();
+      }, 2000);
+    }
+  </script>
+</body>
+</html>
+
